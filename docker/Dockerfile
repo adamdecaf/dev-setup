@@ -3,8 +3,21 @@ FROM debian:8.0
 # Upgrade and Install Packages
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y curl emacs24 openjdk-7-jdk procps ruby2.1 vim wget && \
+    apt-get install -y curl emacs24 git openjdk-7-jdk procps ruby2.1 ssh vim wget && \
     rm -rf /var/lib/apt/lists/*
+
+# Add configs
+ADD configs.tar /tmp/
+ADD bin/install-zsh /tmp/install-zsh
+RUN cd /tmp/ && \
+    cd /tmp/configs/ && \
+    mkdir ~/.ssh/ && \
+    mv /tmp/configs/ssh ~/.ssh/config && \
+    mv /tmp/configs/ssh.pub ~/.ssh/id_rsa.pub && \
+    mv /tmp/configs/ssh.pem ~/.ssh/id_rsa && \
+    /tmp/install-zsh && \
+    mv /tmp/configs/zsh ~/.zshrc && \
+    mv /tmp/configs/zsh-theme ~/.oh-my-zsh/themes/my-theme.zsh-theme
 
 # Copy over config files
 # ADD
