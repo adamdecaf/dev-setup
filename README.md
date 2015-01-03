@@ -10,4 +10,6 @@
 
 ## Keybinds
 
+Trust me, you'll want these.
+
 ![osx keybinds](keybinds.png)
