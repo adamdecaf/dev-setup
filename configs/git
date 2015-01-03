@@ -1,0 +1,8 @@
+[user]
+	email = adam.shannon@banno.com
+	name = Adam Shannon
+[push]
+	default = simple
+[alias]
+	co = checkout
+	p = pull

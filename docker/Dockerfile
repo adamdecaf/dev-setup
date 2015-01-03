@@ -13,33 +13,22 @@ RUN cd /tmp/ && \
     mkdir ~/.ssh/ && \
     mv /tmp/configs/ssh.conf ~/.ssh/config && \
     mv /tmp/configs/ssh ~/.ssh/id_rsa && \
-    mv /tmp/configs/ssh.pub ~/.ssh/id_rsa.pub
+    mv /tmp/configs/ssh.pub ~/.ssh/id_rsa.pub && \
+    mv /tmp/configs/git ~/.gitconfig
 
-# Copy over config files
-# ADD
-# tar up config files, COPY over, tar xf them, rm .tar
+# TODO
+# 1. Copy over ssh key to github
+# 2. Clone down and setup emacs
+# 3. Clone down projects
+# 4. setup sbt? (w/ my configs)
+# 5. rake script integration to deploy this out to ECS, with aws creds read in.
+# 6. need to make a user 'adam' that is the install point?
 
-# how does networking work?
-# command line VPN?
-# status of ^ in prompt?
-
-# more packages to install? -- docker fig nmap ruby scala
-# setup sbt? (w/ my configs)
-# need to make a user 'adam' that is the install point?
-# init script that runs when root logs in?
-# better bash prompt ?
-# custom .bashrc
-# install zsh w/ custom config
-# on leave run script to check git repos for unpushed commits
-# rake script integration to deploy this out to ECS, with aws creds read in.
+# Networking
+## how does networking work?
+### command line VPN? (with status of ^ in prompt?)
 
 # generic script I can download over HTTPS to setup any machine
 ## $ curl https://open.ashanon.us/dev-setup.sh
 ## $ chmod +x dev-setup.sh
 ## $ ./dev-setup.sh
-
-# Remaining Steps
-# 1. Copy over ssh key to github
-# 2. Set up git config
-# 3. Clone down and setup emacs
-# 4. Clone down projects
