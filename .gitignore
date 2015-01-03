@@ -1,4 +1,4 @@
 docker/configs.tar
 docker/bin/
-configs/ssh.pem
+configs/ssh
 configs/ssh.pub
