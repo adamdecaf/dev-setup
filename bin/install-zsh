@@ -1,4 +1,6 @@
 #!/bin/bash
+# Copied from: https://github.com/robbyrussell/oh-my-zsh
+
 set -e
 
 if [ ! -n "$ZSH" ]; then
