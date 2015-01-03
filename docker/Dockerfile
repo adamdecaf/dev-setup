@@ -13,8 +13,8 @@ RUN cd /tmp/ && \
     cd /tmp/configs/ && \
     mkdir ~/.ssh/ && \
     mv /tmp/configs/ssh.conf ~/.ssh/config && \
+    mv /tmp/configs/ssh ~/.ssh/id_rsa && \
     mv /tmp/configs/ssh.pub ~/.ssh/id_rsa.pub && \
-    mv /tmp/configs/ssh.pem ~/.ssh/id_rsa && \
     /tmp/install-zsh && \
     mv /tmp/configs/zsh ~/.zshrc && \
     mv /tmp/configs/zsh-theme ~/.oh-my-zsh/themes/my-theme.zsh-theme
