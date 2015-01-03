@@ -3,7 +3,7 @@ FROM debian:8.0
 # Upgrade and Install Packages
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y curl emacs24 git openjdk-7-jdk procps ruby2.1 ssh vim wget && \
+    apt-get install -y curl emacs24 git openjdk-7-jdk procps ruby2.1 ssh vim wget zsh && \
     rm -rf /var/lib/apt/lists/*
 
 # Add configs
