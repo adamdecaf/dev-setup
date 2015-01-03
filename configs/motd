@@ -1,0 +1,8 @@
+#!/bin/bash
+################################################
+#              Adam's Dev Machine              #
+#                                              #
+# Don't forget to run "./init.sh" to setup     #
+# any systems / configs that may have changed  #
+# since your last login or build.              #
+################################################
