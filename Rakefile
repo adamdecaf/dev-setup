@@ -6,7 +6,14 @@ task :clean_if_exists do
 end
 
 task :build do
-  sh "docker build -t #{IMAGE_NAME} docker/"
+  begin
+    sh "tar cf docker/configs.tar configs/*"
+    sh "mkdir docker/bin/ && cp bin/* docker/bin/"
+    sh "docker build -t #{IMAGE_NAME} docker/"
+  ensure
+    sh "rm docker/configs.tar"
+    sh "rm -rf docker/bin/"
+  end
 end
 
 task :run do
