@@ -20,6 +20,7 @@ Trust me, you'll want these.
   1. script out uploading / running image on each provider
 1. Figure out a networking solution / auto vpn
 1. setup script for any machine?
+1. init script to `git pull` / manage state changed from image build to container start
 
 ### Future Setup Script?
 
