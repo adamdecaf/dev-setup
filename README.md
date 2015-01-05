@@ -23,7 +23,6 @@ Trust me, you'll want these.
 1. init script to `git pull` / manage state changed from image build to container start
 1. make a non-root user
 1. Banno extension with specific projects (bub, big)
-1. add ~/bin to $PATH
 1. encrypt hard drive
 1. Setup dropbox to sync a few folders?
 
