@@ -35,16 +35,3 @@ RUN mkdir /root/bin/ && \
 RUN mkdir -p /root/src/third-party && \
     git clone git@github.com:paulp/sbt-extras.git /root/src/third-party/sbt/ && \
     ln -s /root/src/third-party/sbt/sbt /root/bin/sbt
-
-# TODO
-# - rake script integration to deploy this out to ECS, with aws creds read in.
-# - need to make a user 'adam' that is the install point?
-
-# Networking
-## how does networking work?
-### command line VPN? (with status of ^ in prompt?)
-
-# generic script I can download over HTTPS to setup any machine
-## $ curl https://open.ashanon.us/dev-setup.sh
-## $ chmod +x dev-setup.sh
-## $ ./dev-setup.sh
