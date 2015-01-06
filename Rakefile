@@ -6,18 +6,24 @@ task :clean_if_exists do
   # sh "docker rmi #{IMAGE_NAME}"
 end
 
+desc "build base image"
+task :build_base do
+  sh "docker build -t #{IMAGE_NAME} base/"
+end
+
+desc "build docker image"
 task :build do
   begin
-    if !File.exists?("configs/ssh") or File.zero?("configs/ssh")
-      sh "ssh-keygen -f ./configs/ssh -t rsa -C #{EMAIL_ADDRESS}"
-    end
+    # if !File.exists?("configs/ssh") or File.zero?("configs/ssh")
+    #   sh "ssh-keygen -f ./configs/ssh -t rsa -C #{EMAIL_ADDRESS}"
+    # end
 
-    sh "tar cf docker/configs.tar configs/*"
-    sh "mkdir docker/bin/ && cp bin/* docker/bin/"
-    sh "docker build -t #{IMAGE_NAME} docker/"
+    # sh "tar cf docker/configs.tar configs/*"
+    # sh "mkdir docker/bin/ && cp bin/* docker/bin/"
+    # sh "docker build -t #{IMAGE_NAME} docker/"
   ensure
-    sh "rm docker/configs.tar"
-    sh "rm -rf docker/bin/"
+    # sh "rm docker/configs.tar"
+    # sh "rm -rf docker/bin/"
   end
 end
 
@@ -25,4 +31,4 @@ task :run do
   sh "docker run -it #{IMAGE_NAME}"
 end
 
-task :default => [:clean_if_exists, :build]
+task :default => [:build_base] # [:clean_if_exists, :build]
