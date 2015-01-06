@@ -1,4 +1,2 @@
-docker/configs.tar
-docker/bin/
-configs/ssh
-configs/ssh.pub
+base/configs/ssh
+base/configs/ssh.pub
