@@ -13,6 +13,10 @@ task :run_base do
   sh "docker run -it adamdecaf/dev-setup-base"
 end
 
+task :clean do
+  sh "rm base/configs/ssh"
+  sh "rm base/configs/ssh.pub"
+end
 
 desc "build my image"
 task :build_mine do
