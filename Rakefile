@@ -1,17 +1,27 @@
-IMAGE_NAME = "adamdecaf/dev-setup-base"
 EMAIL_ADDRESS = "adam@ashannon.us"
 
 desc "build base image"
-task :build do
+task :build_base do
   if !File.exists?("base/configs/ssh") or File.zero?("base/configs/ssh")
     sh "ssh-keygen -f ./base/configs/ssh -t rsa -C #{EMAIL_ADDRESS}"
   end
 
-  sh "docker build -t #{IMAGE_NAME} base/"
+  sh "cd base && docker build -t adamdecaf/dev-setup-base ."
 end
 
-task :run do
-  sh "docker run -it #{IMAGE_NAME}"
+task :run_base do
+  sh "docker run -it adamdecaf/dev-setup-base"
 end
 
-task :default => [:build]
+
+desc "build my image"
+task :build_mine do
+  sh "cd mine && docker build -t adamdecaf/dev-setup ."
+end
+
+task :run_mine do
+  sh "docker run -it adamdecaf/dev-setup"
+end
+
+task :default => [:build_base]
+task :mine => [:build_base, :build_mine, :run_mine]
